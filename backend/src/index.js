@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import authRoutes from "./routes/auth.route.js";
 import messageRoutes from "./routes/message.route.js";
 import dotenv from "dotenv";
@@ -14,6 +15,10 @@ const PORT = process.env.PORT;
 //middleware
 app.use(express.json()); //parse json
 app.use(cookieParser()); //parse cookies
+app.use(cors({
+    origin: "https://localhost:5173",
+    credentials: true,
+}));
 
 //routes
 app.use("/api/auth", authRoutes);
