@@ -11,6 +11,8 @@ const MessageInput = () => {
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
+    if (!file) return;
+    
     if (!file.type.startsWith("image/")) {
       toast.error("Please select an image file");
       return;
@@ -70,7 +72,27 @@ const MessageInput = () => {
       )}
 
       <form onSubmit={handleSendMessage} className="flex items-center gap-2">
-        <div className="flex-1 flex gap-2">
+        {/* Image upload input - hidden */}
+        <input
+          type="file"
+          accept="image/*"
+          className="hidden"
+          ref={fileInputRef}
+          onChange={handleImageChange}
+        />
+        
+        {/* Image upload button - visible on all screens */}
+        <button
+          type="button"
+          className={`btn btn-sm btn-circle ${imagePreview ? "text-emerald-500" : "text-zinc-400"}`}
+          onClick={() => fileInputRef.current?.click()}
+          aria-label="Attach image"
+        >
+          <Image size={18} />
+        </button>
+
+        {/* Text input */}
+        <div className="flex-1">
           <input
             type="text"
             className="w-full input input-bordered rounded-lg input-sm sm:input-md"
@@ -78,29 +100,16 @@ const MessageInput = () => {
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
-          <input
-            type="file"
-            accept="image/*"
-            className="hidden"
-            ref={fileInputRef}
-            onChange={handleImageChange}
-          />
-
-          <button
-            type="button"
-            className={`hidden sm:flex btn btn-circle
-                     ${imagePreview ? "text-emerald-500" : "text-zinc-400"}`}
-            onClick={() => fileInputRef.current?.click()}
-          >
-            <Image size={20} />
-          </button>
         </div>
+        
+        {/* Send button */}
         <button
           type="submit"
           className="btn btn-sm btn-circle"
           disabled={!text.trim() && !imagePreview}
+          aria-label="Send message"
         >
-          <Send size={22} />
+          <Send size={18} />
         </button>
       </form>
     </div>
