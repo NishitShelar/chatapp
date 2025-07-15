@@ -1,3 +1,42 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #f8fafc;
+  color: #1e293b;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Animation for chat messages */
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Page transition animation */
+.fade-page-enter { opacity: 0; transform: translateY(24px); }
+.fade-page-enter-active { opacity: 1; transform: none; transition: opacity 350ms, transform 350ms; }
+.fade-page-exit { opacity: 1; }
+.fade-page-exit-active { opacity: 0; transition: opacity 350ms; }
+
+/* Top progress bar animation */
+.animate-progress-bar { animation: progressBar 0.5s cubic-bezier(0.23, 1, 0.32, 1); }
+@keyframes progressBar { from { width: 0%; } to { width: 100%; } }
+
+/* Button and interactive element polish */
+button, .btn, .input, .link, [tabindex]:not([tabindex="-1"]) {
+  outline: none;
+  transition: box-shadow 0.2s, border-color 0.2s, background 0.2s, color 0.2s;
+}
+button:focus-visible, .btn:focus-visible, .input:focus-visible, .link:focus-visible {
+  box-shadow: 0 0 0 2px #2563EB33;
+  border-color: #2563EB;
+}
+button:hover, .btn:hover, .input:hover, .link:hover {
+  filter: brightness(0.97);
+}
