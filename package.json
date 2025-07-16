@@ -2,7 +2,7 @@
   "name": "chatapp",
   "version": "1.0.0",
   "description": "A realtime chat application with image transfer",
-  "main": "backend/src/index.js",
+  "main": "index.js",
   "scripts": {
     "start": "node backend/src/index.js",
     "build": "npm install --legacy-peer-deps --prefix backend && npm install --legacy-peer-deps --prefix frontend && npm run build --prefix frontend"
