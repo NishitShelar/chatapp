@@ -2,12 +2,11 @@
   "name": "chatapp",
   "version": "1.0.0",
   "description": "A realtime chat application with image transfer",
-  "main": "index.js",
-"scripts": {
-  "start": "node index.js",
-  "build": "npm install --legacy-peer-deps --prefix backend && npm install --legacy-peer-deps --prefix frontend && npm run build --prefix frontend"
-},
-
+  "main": "backend/index.js",
+  "scripts": {
+    "start": "node backend/index.js",
+    "build": "npm install --legacy-peer-deps --prefix backend && npm install --legacy-peer-deps --prefix frontend && npm run build --prefix frontend"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
