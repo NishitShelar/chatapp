@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node backend/src/index.js",
-    "build": "npm install --legacy-peer-deps --prefix backend && npm install --legacy-peer-deps --prefix frontend && npm run build --prefix frontend && cp -r frontend/dist backend/src/dist"
+    "build": "npm install --legacy-peer-deps --prefix backend && npm install --legacy-peer-deps --prefix frontend && npm run build --prefix frontend && cp -r frontend/dist ./dist"
   },
   "keywords": [],
   "author": "",
