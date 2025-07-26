@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
+import LandingPage from "./pages/LandingPage";
 import SignUpPage from "./pages/SignUpPage";
 import LoginPage from "./pages/LoginPage";
 import SettingsPage from "./pages/SettingsPage";
@@ -62,6 +63,7 @@ const App = () => {
               <Suspense fallback={<div className="flex items-center justify-center h-[60vh]"><Loader className="size-10 animate-spin text-primary" /></div>}>
                 <Routes location={location}>
                   <Route path="/" element={<HomePage />} />
+                  <Route path="/landing" element={<LandingPage />} />
                   <Route path="/signup" element={!authUser ? <SignUpPage /> : <Navigate to="/chat" />} />
                   <Route path="/login" element={!authUser ? <LoginPage /> : <Navigate to="/chat" />} />
                   <Route path="/chat" element={authUser ? <ChatPage /> : <Navigate to="/login" />} />

@@ -10,14 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@splinetool/react-spline": "^4.1.0",
     "axios": "^1.7.9",
     "browser-image-compression": "^2.0.1",
-    "chatapp": "file:..",
-    "frontend": "file:",
+    "framer-motion": "^12.23.9",
     "lucide-react": "0.263.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hot-toast": "^2.5.2",
+    "react-intersection-observer": "^9.16.0",
     "react-router-dom": "^7.1.5",
     "react-transition-group": "^4.4.5",
     "socket.io-client": "^4.8.1",

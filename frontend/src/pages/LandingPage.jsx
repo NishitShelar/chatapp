@@ -69,7 +69,7 @@ const testimonials = [
   },
 ];
 
-const HomePage = () => {
+const LandingPage = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (e) => {
@@ -621,4 +621,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default LandingPage;
