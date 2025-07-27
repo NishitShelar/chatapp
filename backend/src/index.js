@@ -28,13 +28,6 @@ app.use(
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
-// ✅ Serve frontend (dist in root)
-app.use(express.static(path.join(__dirname, "dist")));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "dist", "index.html"));
-});
-
 // Start server
 server.listen(PORT, () => {
   console.log("✅ Server is running on PORT:", PORT);
